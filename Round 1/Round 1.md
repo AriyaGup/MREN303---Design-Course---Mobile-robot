@@ -31,13 +31,33 @@ We decided not to go with the fixed arm deesign because of the strain it would c
 
 An AWD differential allows us to be able to be more agile - turn in place and not lose traction up the ramp.
 
-Design drafts can be seen in the Image in this folder.
+Design ideas can be seen in the image in this folder.
 
 ## Scrum Planning
 **What are the specific goals for this round? Aside from meeting this round’s design review deliverables, what are your own goals?**
+- Brainstorm tangible design ideas, sub-objectives, and constraints.
+- The gamepad words as intended.
+- The battery is correctly displayed.
+- Complete our intended cardboard model of the robot.
+- Get started with CAD using the measurements that we have so far.
+- Overview of health and safety risks.
+
+**What are the tasks needed to achieve each goal?**
+- Take measurements of everything on the arena. 
+- Get MAC ID and IP address. Mkae sure communication between the gamepad and the Pico W works.
+- draw a detailed rendering of the prototype before starting the cardboard model.
+
+**Who is responsible for each task/goal?**
+- Design and wiring - Ariya
+- Software - Samuel
+- Cardboard prototype - Both
+
+## Health & Safety 
 
 
-## Task Assignment
+
+
+
 **Autonomous**
 
 - Line Following
