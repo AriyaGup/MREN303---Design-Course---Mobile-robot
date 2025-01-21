@@ -31,7 +31,7 @@ We decided not to go with the fixed arm deesign because of the strain it would c
 
 An AWD differential allows us to be able to be more agile - turn in place and not lose traction up the ramp.
 
-Design ideas can be seen in the image in this folder.
+Design process can be seen in "Ideas.jpg".
 
 ## Scrum Planning
 **What are the specific goals for this round? Aside from meeting this round’s design review deliverables, what are your own goals?**
@@ -53,6 +53,31 @@ Design ideas can be seen in the image in this folder.
 - Cardboard prototype - Both
 
 ## Health & Safety 
+- Personal 
+- Electrical 
+- Enviroment 
+
+**Personal Safety**
+
+Eye protection: Goggles should be used during activities like solder or hen using machinery to cut hard objects, fragments may fly into the eyes.
+
+**Training**
+
+Proper training should be required before using dangerous machinery like a laser cutter. We have planned to get training later in the semester for this. Also no one should be alone when work with dangerous machinery. There should be accompanied by a supervisor. 
+
+**Electrical Safety**
+
+Electrical circuit: Double check the wiring and make sure metal part of wires are not exposed before turing any electrical component on to avoid short circuit and electrical shock.
+
+Batteries: Monitor batteries condition regularly to avoid using batteries that are damaged, also use the voltage divider to monitor batter level.
+
+Overheating: Check if component are overheating, careful read datasheet before using, make sure components are wired correctly and with the appropriate current and resistance.
+
+**Enviromental Safety**
+
+Fire hazard precaution: Knowing location of fire alarm pull stations, portable fire extinguishers,emergency evacuation procedures
+
+Ventilation: Work in well-ventilated area when soldering or using materials that emit fumes to avoid beathing in harmful gases.
 
 
 
