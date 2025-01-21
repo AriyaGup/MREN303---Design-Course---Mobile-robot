@@ -131,10 +131,8 @@ See "Drafts" IMG in Branch Round1
 5. Exceed maximum CAD volume
 
 ### Prioritize risks
-1. Battery Overheating
-Impact: Moderate | Likelihood: possible  Priority: Low Med
-2. 
-Impact: Severe | Likelihood: possible  Priority: Med Hi
+1. Battery Overheating Impact: Moderate | Likelihood: possible  Priority: Low Med
+2. Impact: Severe | Likelihood: possible  Priority: Med Hi
 3. Impact: Severe | Likelihood: Likely  Priority: High
 4. Impact: Moderate | Likelihood: unlikely  Priority: Low Med
 5. Impact: Minor | Likelihood: Very unlikely  Priority: Low
