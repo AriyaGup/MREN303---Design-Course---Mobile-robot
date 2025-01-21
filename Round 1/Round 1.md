@@ -23,11 +23,18 @@
 _High voltage required for this. Need more DOF for the arm for unpreedicted challenges._ 
 - Use a trapdoor for the catcher. String to lower and lift the gripper and the base will swivel to deposit dino into catcher.
 _Low voltage required. Weight of motor on arm might be too heavy, but the range of motion of the arm is limited and the second motor will not pull the dino in any horizontal direction._
+- RWD might give traction loss up the ramp to the fire pit and ken, so we decided on AWD differential drive.
 
-We chose the design that we did because of the minimal risk of things that could go wrong. since there were heavy parts that were moving, that lowered the voltage needed and probability of something big going wrong. Using simple mechanisms that are used in everyday machines, we were confident that the design we decided upon would work. We decided not to go with the fixed arm deesign because of the strain it would cause on the angled arm. We also wanted to add a DOF using minimal risk of something going wrong.
+We chose the design that we did because of the minimal risk of things that could go wrong. lesser heavy parts moving lowered the voltage needed and probability of things going wrong. Using simple mechanisms that are used in everyday machines, we were confident that the design we decided upon would work. 
+
+We decided not to go with the fixed arm deesign because of the strain it would cause on the angled arm. We also wanted to add a DOF using minimal risk of something going wrong.
+
+An AWD differential allows us to be able to be more agile - turn in place and not lose traction up the ramp.
 
 Design drafts can be seen in the Image in this folder.
 
+## Scrum Planning
+**What are the specific goals for this round? Aside from meeting this round’s design review deliverables, what are your own goals?**
 
 
 ## Task Assignment
