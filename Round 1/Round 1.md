@@ -79,61 +79,52 @@ Fire hazard precaution: Knowing location of fire alarm pull stations, portable f
 
 Ventilation: Work in well-ventilated area when soldering or using materials that emit fumes to avoid beathing in harmful gases.
 
+## Risks 
+| Risk | Likelihood | Impact | Prevention | Response |Person Responsible|
+| ------ | ------ |-----|------|------|------|
+|Not enough torque generated to pick up Ken|4/10|8/10 - Ken is worth as much as all the dinosaurs|Decrease mass of arm or change design of arm. |Use storage instead of holding him during the whole transport|Ariya|
+|Falling behind schedule|3/10|10/10 - we will not get enpough points or fail the section|test the robot's speed on the terrain, the speed of the gripper and finetune the movements to make them fast without risk of immobilization or jamming|prioritize dinos and ken if time is not on our side|Samuel|
+|Button requires too much force to press/failed button-press or unable to locate button, since the plan for button pressing is that the robot makes 90 degrees truns when the sensor detects the wall, therefore each turn has to be nearly perfect|6/10|10/10 - we will fail the autonomous section|use counterweight and program the robot to approach the button with higher speed, but not to the point that it damages the robot. Use a spring force to press the button with a wide surface area to make sure the button is pressed even if the position of the robot is incorrect.|Have successful tests early on in the project for the robot.|Ariya|
+|Too little 3D printing volume|7/10|6/10 - we would need to use parts not designed specifically to our needs|Do not print things with too many holes or a part that would require a lot of supports. Prototype to perfection so no wasted parts are created|Use cardboard or repurpose 3D parts where necessary|Samuel|
+|Injury|1/10|7/10 - large injuries are not likely since it is a small robot with low voltage batteries compared to bigger machines.|Several electrical components and sharp parts in the prototype can cause injury. Handle all parts with care and on a surface. Do not be frugal with force if something doesnt seem to be working at the time.|Call for Queen's first aid immediately. Know fire extinguisher locations.|Samuel|
+|Command to robot doesn't work/2 commands at the same time because of delay|5/10|7/10 - wasted time to do the action again or retry|practice command execution and the tasks to know each delay and movement of specified task|redo actions after a short pause with clear press of the buttons on the gamepad|Ariya|
+|Gripper not being able to hold all three type of objects due to different shape and weight|3/10|7/10 - we will lose points for anything we cannot even pick up|Use linkage for the gripper design and make a precise prototype to test on the different dinos and minions|the dinos do not slide on the arena surface, so a small push can topple them and we can try grasping at them again in a different position|Ariya|
 
+## Design on Paper 
+**Are you happy with these ideas?**
 
+After mulling over the ideas, they seem tangible. We are happy with these ideas. The gripper is similar to that of a vending machine motion, so they are simple to construct although the programming will be a challenge for us. One problem we face is that we require a motor for the trapdoor to open and close, but 2 6V motors are being used for the wheels, and 3 motors are being used for the arm. we will have to change the mechanism of the arm without changing the design so that we can utilise one of its motors for the trapdoor.
 
+**Instinct - is there an idea that you want to try based on your creative instincts and desire to learn?**
 
-**Autonomous**
+Using a scooping gripper that clasps at the top would be ideal for picking up dinos and minions, but not for ken in a ditch. We would have ideally used an arm with only 1 DOF and a scooping mechanism if there was no need to lift ken from a ditch.
 
-- Line Following
-- Sensors, Turning, Button-press & Exit
-- Exit out of Autonomous Mode
+**Analytical - is there an idea that you know from previous courses or your past experience that should work?**
 
-**Manual**
+We know the gripper will work, having worked with various grippers in MREN 103 and APSC 101. One challenge is that it needs to lift & swivel, which would be a combination of what we have done in the past.
 
-- Gripper CAD
-- Robo Body
-- Dino catcher with trap-door 
-- Motion control of robot using gamepad
-- Motion control of arm using gamepad
+**Are your ideas all high risk, low risk, or a combination of the two?**
 
+Our ideas are a combination of the two. We are confident about certain aspects of the design and code but require lots of testing and more time. We have done each part of this project separately, but this project requires a combination of everything in greater depth.
 
-### Autonomous Mode
+**Choose one of the ideas to explore further. Does the chosen idea have prior art? What has been done that is similar to your idea? What are some of their shortcomings? What do you proposed to do differently, if anything?**
 
-**Process:**
+Using a AWD Differential drive with a claw gripper that picks up vertically and swivels 180 degrees while retracting upward simultaneously. Then places the prop intot he catcher which has a trapdoor so as to not use too much voltage to drop off the props. 
 
-Line following sensor to follow the line East to the door. 
+We have done a similar gripper design in previous years, and have used the exact wheel mechanism with a gamepad to maneuver a mobile robot. However, previously, we have picked and placed the prop onto a higher surface and the arm was fixed at a stationary frame, not moving on a mobile robot. 
 
-Ultrasonic sensor to disable line-follower function and stop a short distance before the door.
+We will need 2 set sof code to control the arm and the robot while using the same gamepad with limited buttons. We have already been given code where a button can swap functions between the other buttons. We will need to figure out how we can do this with our own functions, but changing them entirely instead of swapping them.
 
-Take a sharp left North and go straight to the wall.
+**What are some open questions for your mechanism?**
 
-Stop a short distance from the wall.
+- Amount of torque required to lift the gripper with Ken and swivel at the same time?
+- Do we need torque to grip the object or is it going to hang loosely in the grip?
+- What is the strain on the beam, and how long ar we going to make it so that it is not too heavy?
+- What is the range of motion of the arm vertically and tangentially?
+- What is the counterweight required for button-press and lifting Ken?
+- What speed can we move at without losing functionality or wasting our battery?
+- What is the pace we need to be at to make sure we can accomplish the tasks?
 
-Take a sharp turn East and go forward to press the button. Need to know when to stop after pressing the button.
+**Perform a back-of-the-envelope calculation to arrive at an educated guess for one of your questions. Some examples include calculating torque, range of motion, or speed.**
 
-Go backwards a short distance and either exit the gate diagonally, or turn South and exit forming an arch.
-
-### MANUAL MODE
-
-- Make 3D print of gripper wider for Ken-doll.
-- Add glue gun polymer for better grip on props.
-- Using gamepad allows for minimal delay and accurate control.
-
-### Top 3 ideas
-See "Drafts" IMG in Branch Round1
-
-### Risk 
-1. Gripper not being able to hold all three type of objects due to different shape and weight
-2. Not being able to open gate by pressing button, the button is stiff, it requires a significant amout of force
-3. Unable to locate button, since the plan for button pressing is that the robot makes 90 degrees truns when the sensor detects the wall, therefore each turn has to be nearly perfect
-4. Falling behind schedule
-5. Exceed maximum CAD volume
-
-### Prioritize risks
-1. Battery Overheating Impact: Moderate | Likelihood: possible  Priority: Low Med
-2. Impact: Severe | Likelihood: possible  Priority: Med Hi
-3. Impact: Severe | Likelihood: Likely  Priority: High
-4. Impact: Moderate | Likelihood: unlikely  Priority: Low Med
-5. Impact: Minor | Likelihood: Very unlikely  Priority: Low
 
