@@ -1,0 +1,37 @@
+## Health & Safety 
+- Personal 
+- Electrical 
+- Enviroment 
+
+**Personal Safety**
+
+Eye protection: Goggles should be used during activities like solder or hen using machinery to cut hard objects, fragments may fly into the eyes.
+
+**Training**
+
+Proper training should be required before using dangerous machinery like a laser cutter. We have planned to get training later in the semester for this. Also no one should be alone when work with dangerous machinery. There should be accompanied by a supervisor. 
+
+**Electrical Safety**
+
+Electrical circuit: Double check the wiring and make sure metal part of wires are not exposed before turing any electrical component on to avoid short circuit and electrical shock.
+
+Batteries: Monitor batteries condition regularly to avoid using batteries that are damaged, also use the voltage divider to monitor batter level.
+
+Overheating: Check if component are overheating, careful read datasheet before using, make sure components are wired correctly and with the appropriate current and resistance.
+
+**Enviromental Safety**
+
+Fire hazard precaution: Knowing location of fire alarm pull stations, portable fire extinguishers,emergency evacuation procedures
+
+Ventilation: Work in well-ventilated area when soldering or using materials that emit fumes to avoid beathing in harmful gases.
+
+## Risks 
+| Risk | Likelihood | Impact | Prevention | Response |Person Responsible|
+| ------ | ------ |-----|------|------|------|
+|Not enough torque generated to pick up Ken|4/10|8/10 - Ken is worth as much as all the dinosaurs|Decrease mass of arm or change design of arm. |Use storage instead of holding him during the whole transport|Ariya|
+|Falling behind schedule|3/10|10/10 - we will not get enpough points or fail the section|test the robot's speed on the terrain, the speed of the gripper and finetune the movements to make them fast without risk of immobilization or jamming|prioritize dinos and ken if time is not on our side|Samuel|
+|Button requires too much force to press/failed button-press or unable to locate button, since the plan for button pressing is that the robot makes 90 degrees truns when the sensor detects the wall, therefore each turn has to be nearly perfect|6/10|10/10 - we will fail the autonomous section|use counterweight and program the robot to approach the button with higher speed, but not to the point that it damages the robot. Use a spring force to press the button with a wide surface area to make sure the button is pressed even if the position of the robot is incorrect.|Have successful tests early on in the project for the robot.|Ariya|
+|Too little 3D printing volume|7/10|6/10 - we would need to use parts not designed specifically to our needs|Do not print things with too many holes or a part that would require a lot of supports. Prototype to perfection so no wasted parts are created|Use cardboard or repurpose 3D parts where necessary|Samuel|
+|Injury|1/10|7/10 - large injuries are not likely since it is a small robot with low voltage batteries compared to bigger machines.|Several electrical components and sharp parts in the prototype can cause injury. Handle all parts with care and on a surface. Do not be frugal with force if something doesnt seem to be working at the time.|Call for Queen's first aid immediately. Know fire extinguisher locations.|Samuel|
+|Command to robot doesn't work/2 commands at the same time because of delay|5/10|7/10 - wasted time to do the action again or retry|practice command execution and the tasks to know each delay and movement of specified task|redo actions after a short pause with clear press of the buttons on the gamepad|Ariya|
+|Gripper not being able to hold all three type of objects due to different shape and weight|3/10|7/10 - we will lose points for anything we cannot even pick up|Use linkage for the gripper design and make a precise prototype to test on the different dinos and minions|the dinos do not slide on the arena surface, so a small push can topple them and we can try grasping at them again in a different position|Ariya|
