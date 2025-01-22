@@ -55,7 +55,9 @@ Design process can be seen in "Ideas.jpg".
 ## Design on Paper 
 **Are you happy with these ideas?**
 
-After mulling over the ideas, they seem tangible. We are happy with these ideas. The gripper is similar to that of a vending machine motion, so they are simple to construct although the programming will be a challenge for us. One problem we face is that we require a motor for the trapdoor to open and close, but 2 6V motors are being used for the wheels, and 3 motors are being used for the arm. we will have to change the mechanism of the arm without changing the design so that we can utilise one of its motors for the trapdoor.
+After mulling over the ideas, they seem tangible. We are happy with these ideas. The gripper is similar to that of a vending machine motion, so they are simple to construct although the programming will be a challenge for us. 
+
+One problem we face is that we require a motor for the trapdoor to open and close, but 2 6V motors are being used for the wheels, and 3 motors are being used for the arm. we will have to change the mechanism of the arm without changing the design so that we can utilise one of its motors for the trapdoor.
 
 **Instinct - is there an idea that you want to try based on your creative instincts and desire to learn?**
 
@@ -89,4 +91,8 @@ We will need 2 set sof code to control the arm and the robot while using the sam
 
 **Perform a back-of-the-envelope calculation to arrive at an educated guess for one of your questions. Some examples include calculating torque, range of motion, or speed.**
 
+**State what module you are intending to prototype, and what you are hoping to learn from the prototype. Please include any relevant sketches or drawings and at least one image of your cardboard prototype.**
 
+We are hoping to prototype the arm and the catcher first, to make sure the gripper is the correct size and the catcher can hold all the dinos and a maximum amount of minions wihout being too big to be agile. the gripper must be able to hold all props and the height of the beam that holds the gripper needs to be thought of. 
+
+The catcher's material also necessarily might not be 3D printed, but must be sturdy enough to hold all the props. We need measurements - length of ken, surface area of the ramp - to determine how big to make each module. Turns on top of the ramp will not be easy and the robot needs to be small enough to maneuver safely without one of its wheels falling into the ditch or the fire pit. A rough sketch can be seen in the Round 1 folder.
