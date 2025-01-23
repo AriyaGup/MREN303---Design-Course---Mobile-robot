@@ -91,6 +91,8 @@ We will need 2 set sof code to control the arm and the robot while using the sam
 
 **Perform a back-of-the-envelope calculation to arrive at an educated guess for one of your questions. Some examples include calculating torque, range of motion, or speed.**
 
+Image in Round 1 folder.
+
 **State what module you are intending to prototype, and what you are hoping to learn from the prototype. Please include any relevant sketches or drawings and at least one image of your cardboard prototype.**
 
 We are hoping to prototype the arm and the catcher first, to make sure the gripper is the correct size and the catcher can hold all the dinos and a maximum amount of minions wihout being too big to be agile. the gripper must be able to hold all props and the height of the beam that holds the gripper needs to be thought of. 
