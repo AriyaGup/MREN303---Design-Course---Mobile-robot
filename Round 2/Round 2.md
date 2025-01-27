@@ -31,3 +31,6 @@ After reviewing and reflecting on the plan, please add a statement to indicate t
 > 3. summarize any changes you have made.
 > 4. If you are not meeting some aspect of the plan, please add why and what you plan to do differently.
 
+
+> Place the servo sketch in the round 2 folder AND the code folder. name the ino file in the round 2 folder as a copy version!
+
