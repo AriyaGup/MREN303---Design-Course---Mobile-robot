@@ -10,5 +10,3 @@
 |Functional Requirements | Design Parameters |Analysis|References|Risk|Countermeasures|
 |---|---|---|---|---|---|
 |Corral dinosaurs by pushing|Use an excavator snow blade to collect dinosaurs|More efficient and less voltage needed. Can deposit dinosaurs from the side of the cage. |Physics|Dinosaurs might slide to the sides and not get caught in the plow. Would use extra time to collect them. There might also be friction between the gameboard floor and  tbe dinosaurs|Use an angled plow like an excavator wihtout the bottom so dinosaurs do not get caught under the extension.|
-|||||||
-|||||||
