@@ -1,8 +1,7 @@
 Discuss with your team, and document your work plan for the entire project. Your plan should include **SMART goals and objectives, project tasks, task assignments, key deliverables and milestones (course milestones plus your own milestones), required resources and budget, and timelines.** 
 This plan should be located outside of Round 1 as it is applicable throughout the course.
-
 ---
-| Week | Summary | Tasks | Responsibilities |
+| Week | Obbjectives | Project Tasks | Task Assigments |
 |------|----------------|-------------|-----------------------|
 | 1 | Intro to kit | Examine parts, understand tasks. | All |
 | 2 | |Brainstorm ideas, have the Pico W & Gamepad working | All |
@@ -20,3 +19,5 @@ This plan should be located outside of Round 1 as it is applicable throughout th
 
 No budget required, since all teams get the same parts. 
 An extra motor will need to be accounted for so that the arm can function properly. If not, creating CAD for a mechanism that can use the same servo motor for the vertical pulling of the gripper and turning of the arm will have to be created.
+
+Our goal is to have our robot ready in week 9, with no hardware components left to alter. Any changes made to the robot after Week 9 should be code related.
