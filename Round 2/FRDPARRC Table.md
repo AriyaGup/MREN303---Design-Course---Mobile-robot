@@ -9,6 +9,6 @@
 
 |Functional Requirements | Design Parameters |Analysis|References|Risk|Countermeasures|
 |---|---|---|---|---|---|
-|Corral dinosaurs by pushing||||||
+|Score by collecting dinosaurs in the least amount of time|Collect dinosaurs by pushing towards the cage|More efficient than picking up with a gripper one by one|Physics|1.Dinosaurs might slide to the sides and uses extra time to collect them 2. There will be friction between the gameboard floor and all tbe dinosaurs|1. Extra 3D printing will be needed 2. The friction from all the dinosaurs might slow down the movement speed of the robot.|
 |||||||
 |||||||
