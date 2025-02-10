@@ -13,5 +13,7 @@
 # 2.2 Electrical Schematic & Assembly
 - Electrical Schematic
 - Power budget
-- 
+- Printing Volume - in CAD directory
+
+
 
