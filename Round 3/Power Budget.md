@@ -7,3 +7,13 @@
 | Pico W x1 | 4.8V | 0.1A | 0.3A | 0.48W | 1.44W |
 | **Total** | | | | **9.192W** | **31.032W** |
 
+Normal battery life:
+
+2.5Ah/1.915A = 1.305h
+
+Worse case:
+
+2.5Ah/6.465A = 0.387h
+
+​
+ 
