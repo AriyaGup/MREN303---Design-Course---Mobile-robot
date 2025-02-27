@@ -19,4 +19,5 @@ tyre CAD and gearbox
 Documentation, CAD and assembly - Ariya
 Component testing, logic and other coding - Samuel
 
-
+## Mechanical module assembled
+We have 3D printed and assembled the manipulator, but are still in the process of attaching the servo safely to the gripper with all its gears and pins in place. Photos of the Manipulator parts can be found in the CAD folder. It was done using Fusion 360. We sketched the robot dimenisons for each part and created it knowing the maximum height the robot will reach once all parts are integrated.
