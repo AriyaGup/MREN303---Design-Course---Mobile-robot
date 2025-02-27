@@ -15,5 +15,8 @@ Worse case:
 
 2.5Ah/6.465A = 0.387h
 
-​
+​References:
+MakerPortal.com
+Sparkfun.com
+Raspberry Pi Forum
  
