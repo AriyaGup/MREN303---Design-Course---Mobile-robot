@@ -37,7 +37,7 @@ discussion on peer review
 - documenting initial thoughts on the mobile robot, what you learned from testing it, what you think worked well, and what you might improve in the next iteration
 - Uploaded image of current robot prototype
 
-## Design review 4 s initial thoughts
+## Design review 4 initial thoughts
 
 During this round of testing, our team observed that the robot was able to move back and forth smoothly, demonstrating stable mobility. However, we encountered an issue where one of the prototype’s wheels fell off, indicating a need for a more secure attachment mechanism. This test provided valuable insight into the robot's current functionality and areas that need reinforcement.
 
