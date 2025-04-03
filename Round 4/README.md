@@ -27,18 +27,18 @@ The project is within the specified budget and we have all resources available. 
 - Integrate all parts and continue printing and laser cutting where required - Ariya
 
 ## Design for Sustainability
-1-2 paragraphs
+The life cycle of a robot is important, and financial and environmental factors must be considered. MREN 303 reusing parts from last year reduces waste and the need to source components every year, which saves emissions caused by transport as well. Careful CAD modeling minimizes reprints, saving material and costs. 
+
+Rechargable batteries are better than disposing a new set of batteries every week that contain rare earth metals. PLA is also buidegradable, so with the right resources, recycling the CAD parts is possible.
 
 ## Team Dynamics and Peer Feedback
 discussion on peer review
 
-- Uploaded chassis CAD
+# 
 - Updated 3D printing tally
-- documenting initial thoughts on the mobile robot, what you learned from testing it, what you think worked well, and what you might improve in the next iteration
 - Uploaded image of current robot prototype
-
+#
 ## Design review 4 initial thoughts
-
 During this round of testing, our team observed that the robot was able to move back and forth smoothly, demonstrating stable mobility. However, we encountered an issue where one of the prototype’s wheels fell off, indicating a need for a more secure attachment mechanism. This test provided valuable insight into the robot's current functionality and areas that need reinforcement.
 
-For the next iteration, our team plans to test a more complete version of the robot to allow for proper calibration and refinement of its movements. One key improvement will be the addition of a gearbox, which is necessary for the robot to generate enough force to push the minions into the cage effectively. And also implement the gripper. 
+For the next iteration, our team plans to test a more complete version of the robot to allow for proper calibration and refinement of its movements. One key improvement will be the addition of differential drive, which is necessary for the robot to move in a confined space such as on top of the ramp, and also implement the gripper. 
