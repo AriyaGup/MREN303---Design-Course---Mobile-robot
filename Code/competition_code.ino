@@ -5,47 +5,47 @@
 #include <WiFiUdp.h>
 #include <Servo.h>
 #include <Wire.h>
+#include <SparkFun_TB6612.h>
 
-Servo myservo; 
+Servo myservo1;
+Servo myservo2;
+Servo myservo3;
 
 #ifndef STASSID
 #define STASSID "MREN303_wifi-2.4GHz"
 #define STAPSK "MREN@303p1"
-//#define STASSID "BELL264"
-//#define STAPSK "6CF9191F475D"
 #endif
 
 //motor pins
-#define STBY 21
-#define PWMA 20
-#define AIN1 17
-#define AIN2 16
-#define PWMB 22
-#define BIN1 19
-#define BIN2 18
+#define AIN1 11
+#define AIN2 10 
+#define PWMA 9
+#define BIN1 13
+#define BIN2 14
+#define PWMB 15
+#define STBY 12
 
 // Encoder pins
-#define ENCA_A 8
-#define ENCA_B 10
-#define ENCB_A 7
-#define ENCB_B 5
+//#define ENCA_A 8
+//#define ENCA_B 10
+//#define ENCB_A 7
+//#define ENCB_B 5
 
 // Ultrasonic sensor pins
-#define trigPin 14
-
-#define echoPin 15
+#define trigPin 7
+#define echoPin 8
 
 long duration;
 int distance;
-// PID Control Variables
-float Kp = 1.2, Ki = 0.5, Kd = 0.3;
-float errorA = 0, errorB = 0;
-float prevErrorA = 0, prevErrorB = 0;
-float integralA = 0, integralB = 0;
-float derivativeA = 0, derivativeB = 0;
-float targetSpeed = 150;  // Desired motor speed
+
 
 unsigned int localPort = 8888;  // local port to listen on
+
+int servo1Pos = 180; // default center
+int servo2Pos = 180;
+
+Motor motor1 = Motor(AIN1, AIN2, PWMA, 1, STBY);
+Motor motor2 = Motor(BIN1, BIN2, PWMB, -1, STBY);
 
 // buffers for receiving and sending data
 char packetBuffer[UDP_TX_PACKET_MAX_SIZE + 1];  // buffer to hold incoming packet,
@@ -122,7 +122,12 @@ void setup1(){ //This handles all inputs and outputs and runs on core 2
   
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN,0);
-  myservo.attach(15);
+  myservo1.attach(5);
+  myservo2.attach(2);
+  myservo3.attach(6);
+  myservo1.write(120);
+  myservo2.write(150);
+  myservo3.write(180);
 
   // Initialize motor driver pins as outputs
   pinMode(STBY, OUTPUT);
@@ -140,54 +145,34 @@ void setup1(){ //This handles all inputs and outputs and runs on core 2
 //functions
 
 void moveForward() {
-  digitalWrite(AIN1, LOW);
-  digitalWrite(AIN2, HIGH);
-  digitalWrite(BIN1, LOW);
-  digitalWrite(BIN2, HIGH);
-  
+  motor1.drive(-255);
+  motor2.drive(-255);
   return;
 }
 
 void stopMotors() {
-  digitalWrite(AIN1, LOW);
-  digitalWrite(AIN2, LOW);
-  digitalWrite(BIN1, LOW);
-  digitalWrite(BIN2, LOW);
+  motor1.brake();
+  motor2.brake();
   return;
 }
 
 void turnLeft() {
-  
-  digitalWrite(AIN1, LOW);
-  digitalWrite(AIN2, HIGH);
-  digitalWrite(BIN1, HIGH);
-  digitalWrite(BIN2, LOW);
-  delay(1500);
-  stopMotors();
+  left(motor1, motor2, 255);
   return;
 }
 
 void turnRight() {
-
-  digitalWrite(AIN1, HIGH);
-  digitalWrite(AIN2, LOW);
-  digitalWrite(BIN1, LOW);
-  digitalWrite(BIN2, HIGH);
-  delay(1500);
-  stopMotors();
+  right(motor1, motor2, 255);
   return;
 }
 
 void moveBackward() {
-  
-  digitalWrite(AIN1, HIGH);
-  digitalWrite(AIN2, LOW);
-  digitalWrite(BIN1, HIGH);
-  digitalWrite(BIN2, LOW);
+  motor1.drive(255);
+  motor2.drive(255);
   return;
 }
 
-int getDistance() {
+int findDist() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
@@ -197,8 +182,8 @@ int getDistance() {
   long duration = pulseIn(echoPin, HIGH);
   int distance = duration * 0.034 / 2;
 
-  Serial.print("Distance (cm): ");
-  Serial.println(distance);
+  //Serial.print("Distance (cm): ");
+  //Serial.println(distance);
 
   return distance;
 }
@@ -305,66 +290,108 @@ void loop() { //This loop executes on Core 1 of the Pico, handles networking and
 // YOUR CODING GOES HERE
 void studentCode(int current_mode){ 
   if(current_mode == IDLE_MODE){
-   Serial.println("You are in idle mode");//this line may be removed for final version
+   //Serial.println("You are in idle mode");//this line may be removed for final version
    digitalWrite(LED_BUILTIN, LOW); // LED is off for idle mode
    // Initialize motors state as off
-    digitalWrite(STBY, HIGH);
-    digitalWrite(AIN1, LOW);
-    digitalWrite(AIN2, LOW);
-    digitalWrite(PWMA, HIGH);
-    digitalWrite(BIN1, LOW);
-    digitalWrite(BIN2, LOW);
-    digitalWrite(PWMB, HIGH);
+    motor1.brake();
+    motor2.brake();
     // No further action required
   }
   else if (current_mode == AUTO_MODE){
-    Serial.println("You are in auto mode");//this line may be removed for final version
+    //Serial.println("You are in auto mode");//this line may be removed for final version
     digitalWrite(LED_BUILTIN, LOW); // LED is off for auto mode
 
     moveForward();
-    int distance = getDistance(); // Get sensor reading
-
-    if (distance <= 20) { 
+    if (distance<=20) {
       stopMotors();
-      //turnLeft();
+      delay(500);
       turnLeft();
+      delay(950); // adjust for 90-degree turn
+      stopMotors();
+      delay(300);
+
       moveForward();
-      delay(2000);
-      //turnLeft();
+      delay(2000); // move certain distance
+      stopMotors();
+      delay(300);
+
       turnLeft();
-      moveForward();
-      int distance = getDistance();
-      if (distance <= 20) {
+      delay(950);
+      stopMotors();
+      delay(300);
+
+      if (distance<20){
         stopMotors();
+        delay(500);
+
         turnRight();
-        moveForward();
-        int distance = getDistance();
-        if (distance <= 20) {
+        delay(2500);
+        stopMotors();
+        delay(300);
+        if (distance<20){
           stopMotors();
+          //press
+          myservo1.write(120);
+          current_mode = MANUAL_MODE;
         }
       }
     }
+  }
     // Write additional commands for autonomous mode
     //CAUTION: YOU CANNOT PRESS ANY BUTTONS WHILE IN AUTO MODE UNLESS YOU PASS THE GATE (in this case, press B to go to manual mode)
-  }
+  
   else if (current_mode == MANUAL_MODE) {
-    Serial.println("You are in manual mode");  
+    //Serial.println("You are in manual mode");  
     digitalWrite(STBY, HIGH);
     digitalWrite(LED_BUILTIN, HIGH);
-    if (strcmp(comparisonString,stringUp) == 0) {  
-      moveForward();
+    if ((abs(valueLy)>50)&&(abs(valueLy)>abs(valueLx))) {  
+      motor1.drive(valueLy);
+      motor2.drive(valueLy);
     } 
-    else if (strcmp(comparisonString,stringDown) == 0) {  
-      moveBackward();
-    } 
-    else if (strcmp(comparisonString,stringLeft) == 0) {  
-      turnLeft();
-    } 
-    else if (strcmp(comparisonString,stringRight) == 0) {  
-      turnRight();
+    else if ((valueLx > 50)&&(abs(valueLy)<abs(valueLx))) { 
+      motor1.drive(valueLx);
+      motor2.drive(-valueLx);
     }
-    else if (strcmp(comparisonString,stringX) == 0){
+    else if ((valueLx < -50)&&(abs(valueLy)<abs(valueLx))) { 
+      motor1.drive(valueLx);
+      motor2.drive(-valueLx);
+    }
+    else if ((strcmp(comparisonString, stringX) == 0)||valueLx==0||valueLy==0){
       stopMotors();
+    }
+    else if (strcmp(comparisonString, stringLeft)==0){
+      myservo3.write(180);
+    }
+    else if (strcmp(comparisonString, stringRight)==0){
+      myservo3.write(140);
+    }
+    else if ((valueRy > 50) && (abs(valueRy) > abs(valueRx))) {
+      servo2Pos=servo2Pos+1;
+      if(servo2Pos>180){
+        servo2Pos=180;
+      }
+      myservo2.write(servo2Pos);
+    }
+    else if ((valueRy<-50)&&(abs(valueRy)>abs(valueRx))){  
+      servo2Pos=servo2Pos-1;
+      if(servo2Pos<90){
+        servo2Pos=90;
+      }
+      myservo2.write(servo2Pos);
+    }
+    else if ((valueRx > 50) && (abs(valueRx) > abs(valueRy))) {
+      servo2Pos=servo2Pos+1;
+      if(servo2Pos>180){
+        servo2Pos=180;
+      }
+      myservo2.write(servo1Pos);
+    }
+    else if ((valueRx<-50)&&(abs(valueRx)>abs(valueRy))){  
+      servo1Pos=servo1Pos-1;
+      if(servo2Pos<90){
+        servo2Pos=90;
+      }
+      myservo2.write(servo1Pos);
     }
   }
 
@@ -388,15 +415,16 @@ void readBattery(){
     batteryLevel = map(voltage,2482,3475,0,100);
     char batteryMessage[] = "Battery Level is: %d %";
     sprintf(ReplyBuffer,batteryMessage,batteryLevel);
-    //Serial.println("Battery Level is :");
-    //Serial.print(batteryLevel); 
-    //Serial.print("% \n");  
+    Serial.println("Battery Level is :");
+    Serial.print(batteryLevel); 
+    Serial.print("% \n");  
     return;
   }
 
 void loop1(){ //This Runs on Core 2 and performs all inputs and outputs
 
 currentTime = millis();
+distance = findDist();
 
 if(pollBattery){
     readBattery();
@@ -409,7 +437,7 @@ if ((current_mode == AUTO_MODE) && (currentTime - startTime) >= 30000) {
   current_mode = MANUAL_MODE; // Change to manual mode
   }
 studentCode(current_mode);
-delay(1000); //this line may be removed for final version
+delay(30); //this line may be removed for final version
 }
 
 
