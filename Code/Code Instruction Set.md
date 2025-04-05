@@ -1,7 +1,14 @@
 ## Gamepad
-- A: turns ON
-- B: Turns OFF
+- A: switch to auto mode
+- B: switch to manual mode
+- X: Break
+- Y: switch to idle mode
 - Start: Monitor Battery
+- L stick: Movement control 
+- R stick Y: Joint 1 movement 
+- R stick X: Joint 2 movement
+- Left: Open Gripper
+- Right: Close Gripper
 
 Controller setup will only work when the switch on the back is in the “X” position (not “D”).
 Pressing the “mode” button will switch the functionality of the dpad and left analog stick.
